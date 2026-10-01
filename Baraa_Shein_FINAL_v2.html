@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#c996a7">
+<title>Baraa Shein | Gaza</title>
+<style>
+:root{
+  --pink:#c996a7;
+  --pink2:#f8eef1;
+  --pink3:#fff8fa;
+  --ink:#272225;
+  --muted:#777;
+  --line:#eadfe3;
+  --green:#3f8761;
+  --green2:#e9f8ef;
+  --orange:#d9822b;
+  --orange2:#fff2e2;
+  --red:#b94a4a;
+  --red2:#fff0f0;
+  --blue:#4e74a8;
+  --blue2:#eef4fc;
+  --shadow:0 10px 35px rgba(35,20,25,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;background:#fff;color:var(--ink)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:10px}
+.brandMark{width:42px;height:42px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900;font-size:18px}
+.brandText{font-weight:900;font-size:18px}.brandText small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.navBtns{display:flex;gap:8px;flex-wrap:wrap}
+.navBtns button{border:1px solid var(--line);background:#fff;border-radius:22px;padding:9px 13px;color:var(--ink)}
+.navBtns button.active,.btn{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn{border:none;border-radius:12px;padding:11px 15px}
+.btn.pink{background:var(--pink);color:#fff}
+.btn.soft{background:var(--pink2);color:var(--ink);border:1px solid var(--line)}
+.btn.green{background:var(--green);color:#fff}
+.btn.red{background:var(--red);color:#fff}
+.btn.blue{background:var(--blue);color:#fff}
+.btn.small{padding:8px 11px;font-size:13px}
+.hero{background:linear-gradient(135deg,#fff 0,#fff6f8 55%,#f8eef1 100%);border-bottom:1px solid var(--line)}
+.heroInner{max-width:1180px;margin:auto;padding:48px 18px 34px;text-align:center}
+.heroBadge{display:inline-block;padding:8px 13px;border-radius:30px;background:#fff;border:1px solid var(--line);color:#805b69;font-size:13px}
+.hero h1{font-size:42px;line-height:1.15;margin:17px 0 10px}
+.hero p{max-width:720px;margin:0 auto;color:var(--muted);line-height:1.9}
+.heroActions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.container{max-width:1180px;margin:auto;padding:28px 18px 60px}
+.section{margin-top:34px}
+.sectionHead{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:15px}
+.sectionHead h2{margin:0;font-size:25px}
+.sectionHead p{margin:0;color:var(--muted);font-size:13px}
+.cardGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.card{border:1px solid var(--line);border-radius:20px;padding:15px;background:#fff;box-shadow:var(--shadow)}
+.productImg{height:220px;border-radius:16px;background:var(--pink3);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);margin-bottom:12px}
+.productImg img{width:100%;height:100%;object-fit:cover}.productImg .placeholder{font-size:48px;color:#baa5ad}
+.card h3{margin:6px 0 6px;font-size:17px}.meta{font-size:13px;color:var(--muted);line-height:1.7}
+.priceLine{margin:11px 0}.price{font-size:19px;font-weight:900}.old{text-decoration:line-through;color:#aaa;font-size:13px;margin-left:6px}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.pill{font-size:11px;padding:6px 9px;border-radius:30px;background:#f6f4f5;border:1px solid #eee}.pill.green{background:var(--green2);color:var(--green);border-color:#bce8ca}.pill.orange{background:var(--orange2);color:var(--orange);border-color:#f4d2a7}.pill.red{background:var(--red2);color:var(--red);border-color:#f5c5c5}.pill.blue{background:var(--blue2);color:var(--blue);border-color:#cadcf8}
+.panel{border:1px solid var(--line);border-radius:20px;padding:19px;background:#fff;box-shadow:var(--shadow);margin-top:15px}
+.notice{background:var(--pink3);border:1px solid var(--line);border-radius:15px;padding:13px;line-height:1.8;color:#6e5961}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:13px}
+.col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1px solid #ded8dc;background:#fff;border-radius:11px;padding:11px 12px;outline:0}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(201,150,167,.12)}
+.field textarea{min-height:90px;resize:vertical}
+.twoCol{display:grid;grid-template-columns:1.2fr .8fr;gap:17px}
+.statGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.stat .n{font-size:25px;font-weight:900;margin-top:5px}.stat small{color:var(--muted)}
+.resultBox{background:var(--pink3);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:14px}
+.resultRow{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed #eadfe3}.resultRow:last-child{border-bottom:0}.big{font-size:22px;font-weight:900}
+.tableWrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;min-width:820px;border-collapse:collapse;font-size:13px}th,td{padding:11px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}th{background:#fbf8f9}
+.orderCard{border:1px solid var(--line);border-radius:19px;overflow:hidden;margin-top:14px}.orderHead{padding:14px 15px;background:#fcfafb;display:flex;justify-content:space-between;gap:12px;align-items:center}.orderBody{padding:15px}
+.orderPieces{display:grid;gap:10px;margin-top:10px}.piece{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:10px;background:#fff}
+.pieceImg{width:90px;height:90px;border-radius:12px;overflow:hidden;background:var(--pink3);display:grid;place-items:center}.pieceImg img{width:100%;height:100%;object-fit:cover}
+.piece h4{margin:0 0 5px}.piece small{color:var(--muted)}.pieceActions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.progress{height:9px;border-radius:30px;background:#eee;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:var(--pink)}
+.split{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.muted{color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(25,17,21,.62);z-index:100;display:grid;place-items:center;padding:18px}.modal.hidden{display:none}.modalBox{max-width:820px;width:100%;max-height:92vh;overflow:auto;background:#fff;border-radius:22px;padding:20px}
+.hidden{display:none!important}
+.hr{height:1px;background:var(--line);margin:18px 0}
+footer{border-top:1px solid var(--line);padding:28px 18px;text-align:center;color:#8b7b82;font-size:13px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:12px 16px;border-radius:12px;z-index:200;display:none;max-width:90%}
+.stickyBottom{position:sticky;bottom:8px;display:flex;justify-content:center;margin-top:14px}
+.empty{padding:25px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:15px}
+.hideCustomer{display:none!important}
+@media(max-width:900px){.twoCol{grid-template-columns:1fr}.statGrid{grid-template-columns:repeat(2,1fr)}.col-6,.col-4,.col-3{grid-column:span 12}}
+@media(max-width:600px){.nav{align-items:flex-start;flex-direction:column}.navBtns{width:100%}.navBtns button{flex:1}.hero h1{font-size:32px}.statGrid{grid-template-columns:1fr 1fr}.piece{grid-template-columns:65px 1fr}.pieceActions{grid-column:span 2}.pieceImg{width:65px;height:65px}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav">
+    <div class="brand">
+      <div class="brandMark">B</div>
+      <div class="brandText">Baraa Shein<small>Gaza • Shein Orders</small></div>
+    </div>
+    <div class="navBtns" id="navBtns">
+      <button onclick="showSection('home')" id="navHome">الرئيسية</button>
+      <button onclick="showSection('shein')" id="navShein">طلبات شي إن</button>
+      <button onclick="showSection('instant')" id="navInstant">القطع الفورية</button>
+      <button onclick="showSection('track')" id="navTrack">تتبع طلبي</button>
+      <button onclick="showSection('admin')" id="navAdmin">الإدارة</button>
+    </div>
+  </div>
+</header>
+
+<section id="sec-home" class="hero">
+  <div class="heroInner">
+    <span class="heroBadge">Baraa Shein | Gaza</span>
+    <h1>اطلبي من شي إن بسهولة 🤍</h1>
+    <p>طلبات شي إن • قطع فورية • متابعة الشحن • حساب العربون والربح • صور وتفاصيل كل قطعة</p>
+    <div class="heroActions">
+      <button class="btn pink" onclick="showSection('shein')">🛒 طلب من شي إن</button>
+      <button class="btn soft" onclick="showSection('instant')">⚡ القطع الفورية</button>
+      <button class="btn" onclick="showSection('track')">📦 تتبع طلب</button>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<section id="sec-shein" class="section">
+  <div class="sectionHead">
+    <div><h2>🛒 طلبات شي إن</h2><p>رابط السلة + تفاصيل القطع + العربون + الشحن</p></div>
+  </div>
+  <div class="panel">
+    <div class="grid">
+      <div class="field col-12">
+        <label>رابط السلة المشاركة من شي إن</label>
+        <input id="basketUrl" placeholder="https://onelink.shein.com/...">
+      </div>
+      <div class="field col-6">
+        <label>اسم الزبونة</label>
+        <input id="customerName" placeholder="اسم الزبونة">
+      </div>
+      <div class="field col-6">
+        <label>رقم الواتساب</label>
+        <input id="customerPhone" placeholder="+970...">
+      </div>
+      <div class="field col-6">
+        <label>ملاحظات الطلب</label>
+        <input id="orderNote" placeholder="مقاس/لون/ملاحظة">
+      </div>
+      <div class="field col-3">
+        <label>العربون %</label>
+        <input id="orderDepositRate" type="number" value="75">
+      </div>
+      <div class="field col-3">
+        <label>العمولة الافتراضية ₪</label>
+        <input id="orderCommission" type="number" value="5">
+      </div>
+    </div>
+    <div class="heroActions" style="justify-content:flex-start">
+      <button class="btn soft" onclick="openBasket()">🔗 فتح السلة</button>
+      <button class="btn pink" onclick="addSheinPieceForm()">＋ إضافة قطعة</button>
+      <button class="btn" onclick="recalcOrder()">🧮 حساب الطلب</button>
+    </div>
+    <div id="sheinPieces"></div>
+    <div id="orderTotals" class="resultBox"></div>
+    <div class="stickyBottom"><button class="btn green" onclick="createOrder()">✅ حفظ الطلب وإنشاء رقم طلب</button></div>
+  </div>
+</section>
+
+<section id="sec-instant" class="section">
+  <div class="sectionHead">
+    <div><h2>⚡ القطع الفورية</h2><p>منتجات متوفرة وجاهزة للبيع أو الحجز</p></div>
+  </div>
+  <div id="instantProducts" class="cardGrid"></div>
+</section>
+
+<section id="sec-track" class="section">
+  <div class="sectionHead"><div><h2>📦 تتبع طلبي</h2><p>الزبون يرى طلبه فقط باستخدام رقم الطلب والهاتف</p></div></div>
+  <div class="panel">
+    <div class="grid">
+      <div class="field col-6"><label>رقم الطلب</label><input id="trackId" placeholder="مثال: BS-1001"></div>
+      <div class="field col-6"><label>رقم الهاتف</label><input id="trackPhone" placeholder="+970..."></div>
+    </div>
+    <button class="btn pink" style="margin-top:12px" onclick="trackOrder()">بحث عن الطلب</button>
+    <div id="trackingResult"></div>
+  </div>
+</section>
+
+<section id="sec-admin" class="section">
+  <div class="sectionHead"><div><h2>🔐 لوحة الإدارة</h2><p>هذه المنطقة للإدارة فقط</p></div></div>
+  <div id="adminLock" class="panel">
+    <div class="notice">أدخلي رمز الإدارة. غيّري الرمز من إعدادات الموقع قبل استخدامه فعليًا.</div>
+    <div class="grid">
+      <div class="field col-6"><label>رمز الإدارة</label><input id="adminPin" type="password" placeholder="••••"></div>
+    </div>
+    <button class="btn" style="margin-top:12px" onclick="unlockAdmin()">دخول</button>
+  </div>
+
+  <div id="adminArea" class="hidden">
+    <div class="statGrid">
+      <div class="stat"><small>إجمالي الطلبات</small><div class="n" id="statOrders">0</div></div>
+      <div class="stat"><small>طلبات قيد الشحن</small><div class="n" id="statShipping">0</div></div>
+      <div class="stat"><small>قطع فورية متوفرة</small><div class="n" id="statStock">0</div></div>
+      <div class="stat"><small>إجمالي المبيعات</small><div class="n" id="statSales">0 ₪</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="sectionHead"><div><h3 style="margin:0">إعدادات التسعير</h3><p>تتحكمين بالقيم الافتراضية</p></div></div>
+      <div class="grid">
+        <div class="field col-3"><label>العمولة الافتراضية ₪</label><input id="setCommission" type="number"></div>
+        <div class="field col-3"><label>الشحن لكل كغ ₪</label><input id="setShipping" type="number"></div>
+        <div class="field col-3"><label>العربون الافتراضي %</label><input id="setDeposit" type="number"></div>
+        <div class="field col-3"><label>رمز الإدارة الجديد</label><input id="setPin" type="password" placeholder="غيريه هنا"></div>
+      </div>
+      <button class="btn green" style="margin-top:12px" onclick="saveSettings()">حفظ الإعدادات</button>
+    </div>
+
+    <div class="panel">
+      <div class="sectionHead"><div><h3 style="margin:0">إضافة قطعة فورية</h3><p>الصورة والمخزون والحالة</p></div></div>
+      <div class="grid">
+        <div class="field col-4"><label>اسم القطعة</label><input id="ipName"></div>
+        <div class="field col-4"><label>اللون</label><input id="ipColor"></div>
+        <div class="field col-4"><label>المقاس</label><input id="ipSize"></div>
+        <div class="field col-3"><label>كود المنتج</label><input id="ipSku"></div>
+        <div class="field col-3"><label>السعر ₪</label><input id="ipPrice" type="number"></div>
+        <div class="field col-3"><label>الكمية</label><input id="ipQty" type="number" value="1"></div>
+        <div class="field col-3"><label>رابط المنتج (اختياري)</label><input id="ipUrl"></div>
+        <div class="field col-12"><label>الصورة</label><input id="ipImage" type="file" accept="image/*" onchange="previewInstantImage(event)"><div id="ipPreview" class="meta"></div></div>
+      </div>
+      <button class="btn green" style="margin-top:12px" onclick="addInstantProduct()">＋ حفظ القطعة الفورية</button>
+    </div>
+
+    <div class="panel">
+      <div class="sectionHead"><div><h3 style="margin:0">الطلبات</h3><p>الحالة العامة + حالة كل قطعة</p></div></div>
+      <div id="adminOrders"></div>
+    </div>
+
+    <div class="panel">
+      <div class="sectionHead"><div><h3 style="margin:0">القطع الفورية المخزنة</h3><p>تعديل المخزون والحالة</p></div></div>
+      <div id="adminInstant"></div>
+    </div>
+
+    <div class="panel">
+      <div class="sectionHead"><div><h3 style="margin:0">الربح والخسارة</h3><p>احسبي دفعة أو شهر</p></div></div>
+      <div class="grid">
+        <div class="field col-3"><label>المبيعات</label><input id="plSales" type="number" value="0"></div>
+        <div class="field col-3"><label>تكلفة المنتجات</label><input id="plCost" type="number" value="0"></div>
+        <div class="field col-3"><label>الشحن والتنسيق</label><input id="plShip" type="number" value="0"></div>
+        <div class="field col-3"><label>مصاريف أخرى</label><input id="plExtra" type="number" value="0"></div>
+      </div>
+      <button class="btn" style="margin-top:12px" onclick="calcPL()">حساب</button>
+      <div id="plResult" class="resultBox"></div>
+    </div>
+
+    <div class="panel">
+      <div class="sectionHead"><div><h3 style="margin:0">نسخ احتياطي</h3><p>لتجنب ضياع بيانات المتصفح</p></div></div>
+      <div class="heroActions" style="justify-content:flex-start">
+        <button class="btn soft" onclick="exportData()">⬇️ تصدير البيانات</button>
+        <label class="btn soft" style="display:inline-block">⬆️ استيراد البيانات<input type="file" accept=".json" style="display:none" onchange="importData(event)"></label>
+        <button class="btn red" onclick="resetAll()">حذف بيانات الجهاز</button>
+      </div>
+      <p class="small">هذه النسخة الثابتة تحفظ البيانات على الجهاز/المتصفح. للمزامنة بين هاتف الزبون وهاتفك نحتاج قاعدة بيانات وخادم أو خدمة مثل Supabase/Firebase.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <b>Baraa Shein | Gaza</b><br>
+  <span>ملابس • أحذية • منتجات قماشية • قطع فورية</span>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<div id="instantModal" class="modal hidden">
+  <div class="modalBox">
+    <div class="split"><h2 id="instantModalTitle">طلب قطعة فورية</h2><button class="btn soft" onclick="closeModal('instantModal')">إغلاق</button></div>
+    <div id="instantModalBody"></div>
+  </div>
+</div>
+
+<script>
+const STORAGE_KEY="baraa_shein_v2";
+const DEFAULT_SETTINGS={commission:5,shippingPerKg:47,deposit:75,pin:"2580"};
+const SHIPMENT_STEPS=[
+  "تم استلام الطلب","تم تأكيد العربون","تم الطلب من شي إن","تم تجهيز الطلب للشحن",
+  "في طريقه للشحن إلى الضفة","في الضفة","في طريقه إلى غزة","وصل غزة","جاهز للاستلام","تم التسليم"
+];
+const PIECE_STEPS=["لم تصل","تم الطلب","قيد التجهيز","في طريقها للضفة","في الضفة","في طريقها لغزة","وصلت غزة","وصلت","جاهزة للتسليم","تم التسليم","ملغاة"];
+
+let data=loadData();
+let currentPieces=[];
+let imageDraft="";
+let adminUnlocked=false;
+
+function loadData(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(!raw)return {settings:{...DEFAULT_SETTINGS},orders:[],instant:[],counter:1000};
+    const d=JSON.parse(raw);
+    return {...{settings:{...DEFAULT_SETTINGS},orders:[],instant:[],counter:1000},...d,settings:{...DEFAULT_SETTINGS,...d.settings}};
+  }catch(e){return {settings:{...DEFAULT_SETTINGS},orders:[],instant:[],counter:1000}}
+}
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}
+function money(v){return (Number(v)||0).toFixed(2)+" ₪"}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.style.display="none",2400)}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function showSection(key){
+  ["home","shein","instant","track","admin"].forEach(k=>{
+    const el=document.getElementById("sec-"+k); if(el) el.classList.toggle("hidden",k!==key && key!=="home");
+  });
+  const home=document.getElementById("sec-home"); home.classList.toggle("hidden",key!=="home");
+  if(key==="instant")renderInstant();
+  if(key==="admin")renderAdmin();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function openBasket(){
+  const u=document.getElementById("basketUrl").value.trim();
+  if(!u){toast("أضيفي رابط السلة أولاً");return}
+  try{new URL(u);window.open(u,"_blank","noopener,noreferrer")}catch(e){toast("الرابط غير صحيح")}
+}
+function addSheinPieceForm(piece={}){
+  const id="piece_"+Date.now()+"_"+Math.random().toString(16).slice(2);
+  currentPieces.push({id,name:piece.name||"",sku:piece.sku||"",color:piece.color||"",size:piece.size||"",qty:Number(piece.qty||1),price:Number(piece.price||0),discount:Number(piece.discount||0),weight:Number(piece.weight||0),image:piece.image||"",productUrl:piece.productUrl||"",status:piece.status||"لم تصل"});
+  renderSheinPieces();
+}
+function removeSheinPiece(id){currentPieces=currentPieces.filter(p=>p.id!==id);renderSheinPieces();recalcOrder()}
+function renderSheinPieces(){
+  const box=document.getElementById("sheinPieces");
+  if(!currentPieces.length){box.innerHTML='<div class="empty">أضيفي القطع من السلة واحدة واحدة أو أنشئي نموذج الطلب.</div>';return}
+  box.innerHTML=currentPieces.map((p,i)=>`
+  <div class="piece" data-id="${p.id}">
+    <div class="pieceImg">${p.image?`<img src="${esc(p.image)}" alt="">`:"🛍️"}</div>
+    <div>
+      <h4>قطعة ${i+1}: ${esc(p.name||"بدون اسم")}</h4>
+      <small>الكود: ${esc(p.sku||"-")} • اللون: ${esc(p.color||"-")} • المقاس: ${esc(p.size||"-")}</small>
+      <div class="grid" style="margin-top:8px">
+        <div class="field col-4"><label>السعر</label><input value="${p.price}" type="number" min="0" onchange="updatePiece('${p.id}','price',this.value)"></div>
+        <div class="field col-4"><label>الخصم %</label><input value="${p.discount}" type="number" min="0" onchange="updatePiece('${p.id}','discount',this.value)"></div>
+        <div class="field col-4"><label>الكمية</label><input value="${p.qty}" type="number" min="1" onchange="updatePiece('${p.id}','qty',this.value)"></div>
+      </div>
+    </div>
+    <div class="pieceActions">
+      <button class="btn soft small" onclick="editPiecePrompt('${p.id}')">تعديل</button>
+      <button class="btn red small" onclick="removeSheinPiece('${p.id}')">حذف</button>
+    </div>
+  </div>`).join("");
+}
+function updatePiece(id,k,v){
+  const p=currentPieces.find(x=>x.id===id); if(!p)return;
+  p[k]=k==="qty"||k==="price"||k==="discount"?Number(v)||0:v; recalcOrder();
+}
+function editPiecePrompt(id){
+  const p=currentPieces.find(x=>x.id===id); if(!p)return;
+  const name=prompt("اسم القطعة",p.name); if(name===null)return;
+  p.name=name;
+  p.sku=prompt("رقم المنتج",p.sku)??p.sku;
+  p.color=prompt("اللون",p.color)??p.color;
+  p.size=prompt("المقاس",p.size)??p.size;
+  p.productUrl=prompt("رابط المنتج",p.productUrl)??p.productUrl;
+  p.image=prompt("رابط صورة مباشر (اختياري)",p.image)??p.image;
+  renderSheinPieces(); recalcOrder();
+}
+function calcPiece(p){
+  const after=Number(p.price||0)*(1-Number(p.discount||0)/100);
+  return after*Number(p.qty||1);
+}
+function recalcOrder(){
+  const products=currentPieces.reduce((s,p)=>s+calcPiece(p),0);
+  const weight=currentPieces.reduce((s,p)=>s+(Number(p.weight)||0)*Number(p.qty||1),0);
+  const shipping=weight*Number(data.settings.shippingPerKg||0);
+  const commission=Number(document.getElementById("orderCommission").value||data.settings.commission||0)*currentPieces.length;
+  const subtotal=products+commission+shipping;
+  const depRate=Number(document.getElementById("orderDepositRate").value||data.settings.deposit||75);
+  const deposit=subtotal*depRate/100;
+  const remain=subtotal-deposit;
+  document.getElementById("orderTotals").innerHTML=`
+    <div class="resultRow"><span>إجمالي القطع</span><b>${money(products)}</b></div>
+    <div class="resultRow"><span>الوزن التقديري</span><b>${weight.toFixed(2)} كغ</b></div>
+    <div class="resultRow"><span>الشحن</span><b>${money(shipping)}</b></div>
+    <div class="resultRow"><span>العمولة</span><b>${money(commission)}</b></div>
+    <div class="resultRow"><span>السعر النهائي</span><b class="big">${money(subtotal)}</b></div>
+    <div class="resultRow"><span>العربون (${depRate}%)</span><b>${money(deposit)}</b></div>
+    <div class="resultRow"><span>المتبقي</span><b>${money(remain)}</b></div>`;
+}
+function createOrder(){
+  const name=document.getElementById("customerName").value.trim();
+  const phone=document.getElementById("customerPhone").value.trim();
+  const basket=document.getElementById("basketUrl").value.trim();
+  if(!name||!phone){toast("اكتبي اسم الزبونة ورقم الهاتف");return}
+  if(!currentPieces.length){toast("أضيفي قطعة واحدة على الأقل");return}
+  const totals=getOrderTotals();
+  data.counter++;
+  const id="BS-"+data.counter;
+  data.orders.unshift({
+    id,name,phone,basket,note:document.getElementById("orderNote").value.trim(),
+    createdAt:new Date().toISOString(),
+    shipmentStatus:SHIPMENT_STEPS[0],
+    paid:0,depositRequired:totals.deposit,remaining:totals.remain,total:totals.subtotal,
+    pieces:currentPieces.map(p=>({...p})),
+  });
+  save(); currentPieces=[];
+  ["customerName","customerPhone","basketUrl","orderNote"].forEach(x=>document.getElementById(x).value="");
+  renderSheinPieces(); recalcOrder(); toast("تم حفظ الطلب "+id);
+  showSection("track"); document.getElementById("trackId").value=id; document.getElementById("trackPhone").value=phone; trackOrder();
+}
+function getOrderTotals(){
+  const products=currentPieces.reduce((s,p)=>s+calcPiece(p),0);
+  const weight=currentPieces.reduce((s,p)=>s+(Number(p.weight)||0)*Number(p.qty||1),0);
+  const shipping=weight*Number(data.settings.shippingPerKg||0);
+  const commission=Number(document.getElementById("orderCommission").value||data.settings.commission||0)*currentPieces.length;
+  const subtotal=products+commission+shipping;
+  const depRate=Number(document.getElementById("orderDepositRate").value||data.settings.deposit||75);
+  const deposit=subtotal*depRate/100;
+  return {subtotal,deposit,remain:subtotal-deposit}
+}
+function trackOrder(){
+  const id=document.getElementById("trackId").value.trim().toUpperCase();
+  const phone=document.getElementById("trackPhone").value.trim();
+  const o=data.orders.find(x=>x.id===id&&x.phone===phone);
+  const box=document.getElementById("trackingResult");
+  if(!o){box.innerHTML='<div class="notice" style="margin-top:15px">لم نجد طلبًا بهذه البيانات.</div>';return}
+  const arrived=o.pieces.filter(p=>["وصلت","وصلت غزة","جاهزة للتسليم","تم التسليم"].includes(p.status)).length;
+  const pct=o.pieces.length?Math.round(arrived/o.pieces.length*100):0;
+  const idx=Math.max(0,SHIPMENT_STEPS.indexOf(o.shipmentStatus));
+  box.innerHTML=`
+    <div class="orderCard">
+      <div class="orderHead"><div><b>${esc(o.id)}</b><div class="small">${esc(o.name)}</div></div><span class="pill blue">${esc(o.shipmentStatus)}</span></div>
+      <div class="orderBody">
+        <div><b>الشحن:</b></div>
+        <div class="progress"><i style="width:${((idx+1)/SHIPMENT_STEPS.length)*100}%"></i></div>
+        <div class="small">${esc(o.shipmentStatus)}</div>
+        <div class="resultBox">
+          <div class="resultRow"><span>إجمالي الطلب</span><b>${money(o.total)}</b></div>
+          <div class="resultRow"><span>العربون المطلوب</span><b>${money(o.depositRequired)}</b></div>
+          <div class="resultRow"><span>المدفوع</span><b>${money(o.paid)}</b></div>
+          <div class="resultRow"><span>المتبقي</span><b>${money(Math.max(0,o.total-o.paid))}</b></div>
+          <div class="resultRow"><span>القطع الواصلة</span><b>${arrived}/${o.pieces.length} — ${pct}%</b></div>
+        </div>
+        <div class="orderPieces">${o.pieces.map(p=>`
+          <div class="piece">
+            <div class="pieceImg">${p.image?`<img src="${esc(p.image)}" alt="">`:"🛍️"}</div>
+            <div><h4>${esc(p.name||"قطعة")}</h4><small>${esc(p.color||"-")} • ${esc(p.size||"-")} • ×${p.qty}</small></div>
+            <span class="pill ${["وصلت","وصلت غزة","جاهزة للتسليم","تم التسليم"].includes(p.status)?"green":p.status==="لم تصل"?"red":"orange"}">${esc(p.status)}</span>
+          </div>`).join("")}</div>
+      </div>
+    </div>`;
+}
+function renderInstant(){
+  const box=document.getElementById("instantProducts");
+  if(!data.instant.length){box.innerHTML='<div class="empty">لا توجد قطع فورية مضافة بعد.</div>';return}
+  box.innerHTML=data.instant.map((p,i)=>`
+    <div class="card">
+      <div class="productImg">${p.image?`<img src="${esc(p.image)}">`:"⚡"}</div>
+      <div class="pills"><span class="pill ${p.stock>0?"green":"red"}">${p.stock>0?"متوفر":"مباع"}</span></div>
+      <h3>${esc(p.name)}</h3>
+      <div class="meta">اللون: ${esc(p.color||"-")} • المقاس: ${esc(p.size||"-")}<br>الكود: ${esc(p.sku||"-")}</div>
+      <div class="priceLine"><span class="price">${money(p.price)}</span></div>
+      <div class="meta">الكمية: ${p.stock}</div>
+      <button class="btn pink full" onclick="instantOrder(${i})" ${p.stock<1?"disabled":""}>${p.stock>0?"اطلبها":"غير متوفرة"}</button>
+    </div>`).join("");
+}
+function instantOrder(i){
+  const p=data.instant[i];
+  document.getElementById("instantModalTitle").textContent="طلب قطعة فورية";
+  document.getElementById("instantModalBody").innerHTML=`
+   <div class="notice"><b>${esc(p.name)}</b><br>${esc(p.color||"-")} • ${esc(p.size||"-")}<br>${money(p.price)} • متوفر ${p.stock}</div>
+   <div class="grid">
+    <div class="field col-6"><label>اسم الزبون</label><input id="fiName"></div>
+    <div class="field col-6"><label>رقم الهاتف</label><input id="fiPhone"></div>
+    <div class="field col-6"><label>الكمية</label><input id="fiQty" type="number" min="1" max="${p.stock}" value="1"></div>
+    <div class="field col-6"><label>ملاحظة</label><input id="fiNote"></div>
+   </div>
+   <button class="btn green full" style="margin-top:13px" onclick="confirmInstant(${i})">تأكيد الطلب</button>`;
+  document.getElementById("instantModal").classList.remove("hidden");
+}
+function confirmInstant(i){
+  const p=data.instant[i], name=document.getElementById("fiName").value.trim(), phone=document.getElementById("fiPhone").value.trim(), qty=Number(document.getElementById("fiQty").value||1);
+  if(!name||!phone||qty<1||qty>p.stock){toast("تحققي من البيانات");return}
+  data.counter++; const id="FI-"+data.counter;
+  p.stock-=qty;
+  data.orders.unshift({id,name,phone,basket:"",note:document.getElementById("fiNote").value.trim(),createdAt:new Date().toISOString(),shipmentStatus:"جاهز للاستلام",paid:0,depositRequired:p.price*qty,remaining:p.price*qty,total:p.price*qty,pieces:[{id:"fi_"+Date.now(),name:p.name,sku:p.sku,color:p.color,size:p.size,qty,price:p.price,discount:0,weight:0,image:p.image,productUrl:p.url,status:"جاهزة للتسليم"}]});
+  save(); closeModal("instantModal"); renderInstant(); toast("تم إنشاء الطلب "+id);
+}
+function closeModal(id){document.getElementById(id).classList.add("hidden")}
+function previewInstantImage(e){const f=e.target.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>{imageDraft=r.result;document.getElementById("ipPreview").textContent="تم اختيار الصورة"};r.readAsDataURL(f)}
+function addInstantProduct(){
+  const name=document.getElementById("ipName").value.trim(); if(!name){toast("اكتبي اسم القطعة");return}
+  data.instant.unshift({id:"IP-"+Date.now(),name,color:document.getElementById("ipColor").value.trim(),size:document.getElementById("ipSize").value.trim(),sku:document.getElementById("ipSku").value.trim(),price:Number(document.getElementById("ipPrice").value||0),stock:Number(document.getElementById("ipQty").value||0),url:document.getElementById("ipUrl").value.trim(),image:imageDraft});
+  save(); imageDraft=""; ["ipName","ipColor","ipSize","ipSku","ipPrice","ipQty","ipUrl","ipImage"].forEach(x=>{const e=document.getElementById(x);if(e)e.value=""});
+  document.getElementById("ipPreview").textContent=""; renderInstant(); renderAdmin(); toast("تمت إضافة القطعة الفورية");
+}
+function unlockAdmin(){
+  if(document.getElementById("adminPin").value===data.settings.pin){adminUnlocked=true;document.getElementById("adminLock").classList.add("hidden");document.getElementById("adminArea").classList.remove("hidden");renderAdmin()}
+  else toast("رمز الإدارة غير صحيح")
+}
+function renderAdmin(){
+  if(!adminUnlocked)return;
+  document.getElementById("statOrders").textContent=data.orders.length;
+  document.getElementById("statShipping").textContent=data.orders.filter(o=>!["جاهز للاستلام","تم التسليم"].includes(o.shipmentStatus)).length;
+  document.getElementById("statStock").textContent=data.instant.reduce((s,p)=>s+Number(p.stock||0),0);
+  document.getElementById("statSales").textContent=money(data.orders.reduce((s,o)=>s+Number(o.total||0),0));
+  document.getElementById("setCommission").value=data.settings.commission;
+  document.getElementById("setShipping").value=data.settings.shippingPerKg;
+  document.getElementById("setDeposit").value=data.settings.deposit;
+  document.getElementById("adminOrders").innerHTML=data.orders.length?data.orders.map((o,oi)=>adminOrderHtml(o,oi)).join(""):'<div class="empty">لا توجد طلبات.</div>';
+  document.getElementById("adminInstant").innerHTML=data.instant.length?data.instant.map((p,i)=>`
+    <div class="orderCard"><div class="orderHead"><b>${esc(p.name)}</b><span class="pill ${p.stock?"green":"red"}">${p.stock?"متوفر":"مباع"}</span></div>
+    <div class="orderBody"><div class="meta">الكود: ${esc(p.sku||"-")} • اللون: ${esc(p.color||"-")} • المقاس: ${esc(p.size||"-")}</div>
+    <div class="heroActions" style="justify-content:flex-start">
+      <button class="btn soft small" onclick="changeInstantStock(${i},1)">＋1</button>
+      <button class="btn soft small" onclick="changeInstantStock(${i},-1)">−1</button>
+      <button class="btn red small" onclick="deleteInstant(${i})">حذف</button>
+    </div></div></div>`).join(""):'<div class="empty">لا توجد قطع فورية.</div>';
+}
+function adminOrderHtml(o,oi){
+  const arrived=o.pieces.filter(p=>["وصلت","وصلت غزة","جاهزة للتسليم","تم التسليم"].includes(p.status)).length;
+  return `<div class="orderCard">
+   <div class="orderHead"><div><b>${esc(o.id)}</b><div class="small">${esc(o.name)} • ${esc(o.phone)}</div></div><span class="pill blue">${esc(o.shipmentStatus)}</span></div>
+   <div class="orderBody">
+    <div class="grid">
+      <div class="field col-4"><label>حالة الشحنة</label><select onchange="updateOrderStatus(${oi},this.value)">${SHIPMENT_STEPS.map(s=>`<option ${o.shipmentStatus===s?"selected":""}>${s}</option>`).join("")}</select></div>
+      <div class="field col-4"><label>المدفوع</label><input type="number" value="${o.paid}" onchange="updatePaid(${oi},this.value)"></div>
+      <div class="field col-4"><label>رابط السلة</label><input value="${esc(o.basket||"")}" onchange="updateBasket(${oi},this.value)"></div>
+    </div>
+    <div class="resultBox">
+      <div class="resultRow"><span>الإجمالي</span><b>${money(o.total)}</b></div>
+      <div class="resultRow"><span>العربون المطلوب</span><b>${money(o.depositRequired)}</b></div>
+      <div class="resultRow"><span>المتبقي</span><b>${money(Math.max(0,o.total-o.paid))}</b></div>
+      <div class="resultRow"><span>وصل</span><b>${arrived}/${o.pieces.length}</b></div>
+    </div>
+    <div class="orderPieces">${o.pieces.map((p,pi)=>`
+      <div class="piece">
+        <div class="pieceImg">${p.image?`<img src="${esc(p.image)}">`:"🛍️"}</div>
+        <div><h4>${esc(p.name||"قطعة")}</h4><small>الكود: ${esc(p.sku||"-")} • ${esc(p.color||"-")} • ${esc(p.size||"-")} • ×${p.qty}</small></div>
+        <div class="pieceActions">
+          <select onchange="updatePieceStatus(${oi},${pi},this.value)">${PIECE_STEPS.map(s=>`<option ${p.status===s?"selected":""}>${s}</option>`).join("")}</select>
+          <button class="btn soft small" onclick="editAdminPiece(${oi},${pi})">تعديل</button>
+        </div>
+      </div>`).join("")}</div>
+    <div class="heroActions" style="justify-content:flex-start">
+      <button class="btn soft small" onclick="addAdminPiece(${oi})">＋ قطعة</button>
+      <button class="btn red small" onclick="deleteOrder(${oi})">حذف الطلب</button>
+    </div>
+   </div></div>`
+}
+function updateOrderStatus(i,v){data.orders[i].shipmentStatus=v;save();renderAdmin()}
+function updatePaid(i,v){data.orders[i].paid=Number(v)||0;save();renderAdmin()}
+function updateBasket(i,v){data.orders[i].basket=v;save()}
+function updatePieceStatus(oi,pi,v){data.orders[oi].pieces[pi].status=v;save();renderAdmin()}
+function editAdminPiece(oi,pi){
+ const p=data.orders[oi].pieces[pi];
+ p.name=prompt("اسم القطعة",p.name)??p.name;p.sku=prompt("الكود",p.sku)??p.sku;p.color=prompt("اللون",p.color)??p.color;p.size=prompt("المقاس",p.size)??p.size;p.image=prompt("رابط الصورة",p.image)??p.image;
+ save();renderAdmin();
+}
+function addAdminPiece(oi){data.orders[oi].pieces.push({id:"p_"+Date.now(),name:"قطعة جديدة",sku:"",color:"",size:"",qty:1,price:0,discount:0,weight:0,image:"",productUrl:"",status:"لم تصل"});save();renderAdmin()}
+function deleteOrder(i){if(confirm("حذف الطلب نهائيًا؟")){data.orders.splice(i,1);save();renderAdmin()}}
+function changeInstantStock(i,d){data.instant[i].stock=Math.max(0,Number(data.instant[i].stock||0)+d);save();renderInstant();renderAdmin()}
+function deleteInstant(i){if(confirm("حذف القطعة الفورية؟")){data.instant.splice(i,1);save();renderInstant();renderAdmin()}}
+function saveSettings(){
+  data.settings.commission=Number(document.getElementById("setCommission").value||0);
+  data.settings.shippingPerKg=Number(document.getElementById("setShipping").value||0);
+  data.settings.deposit=Number(document.getElementById("setDeposit").value||75);
+  const newPin=document.getElementById("setPin").value.trim(); if(newPin)data.settings.pin=newPin;
+  save(); toast("تم حفظ الإعدادات");
+}
+function calcPL(){
+  const sales=Number(document.getElementById("plSales").value||0),cost=Number(document.getElementById("plCost").value||0),ship=Number(document.getElementById("plShip").value||0),extra=Number(document.getElementById("plExtra").value||0);
+  const net=sales-cost-ship-extra;
+  document.getElementById("plResult").innerHTML=`<div class="resultRow"><span>المبيعات</span><b>${money(sales)}</b></div><div class="resultRow"><span>التكلفة</span><b>${money(cost)}</b></div><div class="resultRow"><span>الشحن والتنسيق</span><b>${money(ship)}</b></div><div class="resultRow"><span>مصاريف أخرى</span><b>${money(extra)}</b></div><div class="resultRow"><span>الصافي</span><b class="big">${money(net)}</b></div>`;
+}
+function exportData(){
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="baraa-shein-backup.json";a.click();URL.revokeObjectURL(a.href);
+}
+function importData(e){
+ const f=e.target.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();renderInstant();renderAdmin();toast("تم استيراد البيانات")}catch(_){toast("ملف النسخة الاحتياطية غير صالح")}};r.readAsText(f)
+}
+function resetAll(){if(confirm("سيتم حذف كل بيانات الجهاز. هل أنتِ متأكدة؟")){localStorage.removeItem(STORAGE_KEY);location.reload()}}
+function init(){
+  document.getElementById("orderDepositRate").value=data.settings.deposit;
+  document.getElementById("orderCommission").value=data.settings.commission;
+  document.getElementById("orderCommission").addEventListener("input",recalcOrder);
+  document.getElementById("orderDepositRate").addEventListener("input",recalcOrder);
+  renderSheinPieces();recalcOrder();renderInstant();
+  showSection("home");
+}
+init();
+</script>
+</body>
+</html>
